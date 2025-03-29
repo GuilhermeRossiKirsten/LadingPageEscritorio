@@ -1,4 +1,6 @@
 "use client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import ImageProject from "@/../public/image.png";
 import ImageLogo from "@/../public/logo.png";
@@ -110,6 +112,19 @@ export default function Home() {
           personalizado e estratégico para garantir os melhores resultados para
           nossos clientes.
         </p>
+
+        {/* Botão para redes sociais */}
+        <div className="text-center mt-8">
+          <a
+            href="https://www.instagram.com/r.kirstennetoadvogados?igsh=MXVjbHVkcjhlbjMwMw==" // Substitua pelo seu link do Instagram
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white py-2 px-4 rounded-full font-semibold shadow-md hover:bg-blue-700 transition duration-300 flex items-center justify-center"
+          >
+            <FontAwesomeIcon icon={faInstagram} className="mr-1" />
+            Siga-nos no Instagram
+          </a>
+        </div>
       </section>
 
       {/* Áreas de Atuação */}
