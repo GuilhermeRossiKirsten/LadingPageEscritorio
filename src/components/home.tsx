@@ -2,9 +2,15 @@
 
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faThreads,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import {
+  Share2,
   Scale,
   Briefcase,
   Shield,
@@ -169,7 +175,7 @@ export default function Home() {
         <div className="relative container mx-auto px-6 py-24 md:py-32 lg:py-40">
           <div className="max-w-3xl">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-6">
-              Excelência Jurídica desde 2004
+              Excelência Jurídica desde 2000
             </p>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-balance">
               Advocacia com compromisso e dedicação
@@ -227,7 +233,7 @@ export default function Home() {
                 Tradição e inovação a serviço da Justiça
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Com mais de 20 anos de experiência, o escritório RKirsten Neto
+                Com mais de 25 anos de experiência, o escritório RKirsten Neto
                 Advogados consolidou-se como referência em advocacia de
                 excelência em São Paulo. Nossa equipe combina conhecimento
                 técnico aprofundado com um atendimento humanizado e
@@ -239,15 +245,37 @@ export default function Home() {
                 necessidades. Nosso compromisso é com resultados concretos e a
                 satisfação de quem confia em nosso trabalho.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+
+              <p className="text-accent font-semibold tracking-widest uppercase mb-4">
+                Nos siga nas redes sociais
+              </p>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://www.facebook.com/share/17L7C9He9v/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-[#1877F2] text-white px-4 py-2.5   text-sm font-medium hover:bg-[#1877F2]/90 transition-colors"
+                >
+                  <FontAwesomeIcon icon={faFacebook} className="w-4 h-4" />
+                  Facebook
+                </a>
                 <a
                   href="https://www.instagram.com/r.kirstennetoadvogados?igsh=MXVjbHVkcjhlbjMwMw=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-logo text-primary-foreground px-6 py-3 font-medium hover:bg-primary/90 transition-colors duration-200"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white px-4 py-2.5   text-sm font-medium hover:opacity-90 transition-opacity"
                 >
-                  <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
-                  Siga-nos no Instagram
+                  <FontAwesomeIcon icon={faInstagram} className="w-4 h-4" />
+                  Instagram
+                </a>
+                <a
+                  href="https://www.threads.com/@r.kirstennetoadvogados"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-4 py-2.5   text-sm font-medium hover:bg-foreground/90 transition-colors"
+                >
+                  <FontAwesomeIcon icon={faThreads} className="w-4 h-4" />
+                  Threads
                 </a>
               </div>
             </div>
@@ -262,7 +290,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-accent p-6 hidden md:block">
                 <Award className="w-8 h-8 text-accent-foreground mb-2" />
-                <p className="text-accent-foreground font-bold text-2xl">20+</p>
+                <p className="text-accent-foreground font-bold text-2xl">25+</p>
                 <p className="text-accent-foreground/80 text-sm">
                   Anos de Excelência
                 </p>
@@ -383,6 +411,7 @@ export default function Home() {
       </section>
 
       {/* Contato */}
+      {/* Contato */}
       <section id="contato" className="py-20 md:py-28 scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -398,66 +427,140 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Informações de Contato */}
-            <div className="space-y-8">
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  {
-                    icon: MapPin,
-                    title: "Endereço",
-                    content:
-                      "R. Tuiuti, 1897\nCidade Mãe do Céu\nSão Paulo - SP\n03307-005",
-                  },
-                  {
-                    icon: Phone,
-                    title: "Telefone",
-                    content: "(11) 98224-0004\n(11) 95917-8000",
-                  },
-                  {
-                    icon: Mail,
-                    title: "E-mail",
-                    content:
-                      "mariana.rossi.adv@gmail.com\nparecerjuridico@gmail.com",
-                  },
-                  {
-                    icon: Clock,
-                    title: "Horário",
-                    content: "Segunda à Sexta\n9h às 18h",
-                  },
-                ].map((info, index) => {
-                  const Icon = info.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="p-6 bg-secondary border border-border"
-                    >
-                      <Icon className="w-6 h-6 text-accent mb-4" />
-                      <h3 className="font-semibold text-foreground mb-2">
-                        {info.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm whitespace-pre-line">
-                        {info.content}
-                      </p>
-                    </div>
-                  );
-                })}
+          {/* Grid de cards de contato */}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-2 gap-6 mb-6">
+              {/* Endereço Unidade Leste */}
+              <div className="p-6 bg-card border border-border ">
+                <MapPin className="w-6 h-6 text-accent mb-4" />
+                <h3 className="font-semibold text-foreground mb-3">
+                  Endereço Unidade Leste
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  R. Tuiuti, 1897
+                  <br />
+                  Cidade Mãe do Céu
+                  <br />
+                  São Paulo - SP
+                  <br />
+                  03307-005
+                </p>
               </div>
 
-              {/* WhatsApp CTA */}
-              <a
-                href="https://wa.me/5511982240004"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-logo text-primary-foreground p-4 font-semibold hover:bg-primary/90 transition-colors duration-200 w-full"
-              >
-                <Phone className="w-5 h-5" />
-                Fale pelo WhatsApp
-              </a>
+              {/* Endereço Unidade Norte */}
+              <div className="p-6 bg-card border border-border ">
+                <MapPin className="w-6 h-6 text-accent mb-4" />
+                <h3 className="font-semibold text-foreground mb-3">
+                  Endereço Unidade Norte
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  R. Baltazar de Aragão, 2C
+                  <br />
+                  Vila Maria Alta
+                  <br />
+                  São Paulo - SP
+                  <br />
+                  02134-020
+                </p>
+              </div>
+
+              {/* Telefone */}
+              <div className="p-6 bg-card border border-border ">
+                <Phone className="w-6 h-6 text-accent mb-4" />
+                <h3 className="font-semibold text-foreground mb-3">Telefone</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <a
+                    href="tel:+5511982240004"
+                    className="hover:text-accent transition-colors"
+                  >
+                    (11) 98224-0004
+                  </a>
+                  <br />
+                  <a
+                    href="tel:+5511959178000"
+                    className="hover:text-accent transition-colors"
+                  >
+                    (11) 95917-8000
+                  </a>
+                </p>
+              </div>
+
+              {/* E-mail */}
+              <div className="p-6 bg-card border border-border ">
+                <Mail className="w-6 h-6 text-accent mb-4" />
+                <h3 className="font-semibold text-foreground mb-3">E-mail</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <a
+                    href="mailto:kirstennetoadvogados@gmail.com"
+                    className="hover:text-accent transition-colors"
+                  >
+                    kirstennetoadvogados@gmail.com
+                  </a>
+                </p>
+              </div>
+
+              {/* Horário */}
+              <div className="p-6 bg-card border border-border ">
+                <Clock className="w-6 h-6 text-accent mb-4" />
+                <h3 className="font-semibold text-foreground mb-3">Horário</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Segunda à Sexta
+                  <br />
+                  9h às 18h
+                </p>
+              </div>
+
+              {/* Redes Sociais */}
+              <div className="p-6 bg-card border border-border ">
+                <Share2 className="w-6 h-6 text-accent mb-4" />
+                <h3 className="font-semibold text-foreground mb-4">
+                  Redes Sociais
+                </h3>
+                <div className="flex flex-col gap-3">
+                  <a
+                    href="https://www.facebook.com/share/17L7C9He9v/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-[#1877F2] text-white px-4 py-2.5   text-sm font-medium hover:bg-[#1877F2]/90 transition-colors"
+                  >
+                    <FontAwesomeIcon icon={faFacebook} className="w-4 h-4" />
+                    Facebook
+                  </a>
+                  <a
+                    href="https://www.instagram.com/r.kirstennetoadvogados?igsh=MXVjbHVkcjhlbjMwMw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white px-4 py-2.5   text-sm font-medium hover:opacity-90 transition-opacity"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} className="w-4 h-4" />
+                    Instagram
+                  </a>
+                  <a
+                    href="https://www.threads.com/@r.kirstennetoadvogados"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-4 py-2.5   text-sm font-medium hover:bg-foreground/90 transition-colors"
+                  >
+                    <FontAwesomeIcon icon={faThreads} className="w-4 h-4" />
+                    Threads
+                  </a>
+                </div>
+              </div>
             </div>
 
+            {/* Botão WhatsApp */}
+            <a
+              href="https://wa.me/5511959178000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 bg-accent text-accent-foreground p-5  font-semibold text-lg hover:bg-accent/90 transition-colors duration-200 w-full"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} className="w-6 h-6" />
+              Fale pelo WhatsApp
+            </a>
+
             {/* Mapa */}
-            <div className="h-[400px] lg:h-full min-h-[400px]">
+            <div className="h-[400px] mt-8  overflow-hidden">
               <iframe
                 className="w-full h-full border border-border"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2112.987780716502!2d-46.5755556151009!3d-23.541973180904154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ec18b3b7e39%3A0xe447f6cc0bdb7a99!2sR.%20Tuiuti%2C%201896%20-%20Cidade%20M%C3%A3e%20do%20C%C3%A9u%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003307-005!5e0!3m2!1spt-BR!2sbr!4v1743223831005!5m2!1spt-BR!2sbr"
@@ -481,6 +584,15 @@ export default function Home() {
             </p>
             <div className="flex gap-4">
               <a
+                href="https://www.facebook.com/share/17L7C9He9v/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
+                aria-label="Facebook"
+              >
+                <FontAwesomeIcon icon={faFacebook} className="w-5 h-5" />
+              </a>
+              <a
                 href="https://www.instagram.com/r.kirstennetoadvogados?igsh=MXVjbHVkcjhlbjMwMw=="
                 target="_blank"
                 rel="noopener noreferrer"
@@ -488,6 +600,15 @@ export default function Home() {
                 aria-label="Instagram"
               >
                 <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.threads.com/@r.kirstennetoadvogados"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
+                aria-label="Instagram"
+              >
+                <FontAwesomeIcon icon={faThreads} className="w-5 h-5" />
               </a>
             </div>
           </div>
