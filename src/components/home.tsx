@@ -78,7 +78,7 @@ export default function Home() {
   ];
 
   const estatisticas = [
-    { valor: "20+", label: "Anos de Experiência" },
+    { valor: "25+", label: "Anos de Experiência" },
     { valor: "5.000+", label: "Casos Atendidos" },
     { valor: "98%", label: "Clientes Satisfeitos" },
   ];

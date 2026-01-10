@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "RKirsten Neto Advogados | Advocacia com Excelência",
   description:
-    "Escritório de advocacia com mais de 20 anos de experiência. Atuamos em Direito Civil, Trabalhista, Previdenciário, Empresarial e mais.",
+    "Escritório de advocacia com mais de 25 anos de experiência. Atuamos em Direito Civil, Trabalhista, Previdenciário, Empresarial e mais.",
   generator: "v0.app",
   icons: {
     icon: "/logo.png",
